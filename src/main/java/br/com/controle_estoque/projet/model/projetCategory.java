@@ -18,11 +18,12 @@ import lombok.Data;
 @Entity
 @Table(name = "tb_category")
 public class projetCategory {
+
     @Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-@Column(columnDefinition = "char(36)") // Força o MySQL a criar um campo de texto fixo
-@JdbcTypeCode(SqlTypes.CHAR) // Diz ao Hibernate 6 para tratar como caractere
-private UUID id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "char(36)") // Força o MySQL a criar um campo de texto fixo
+    @JdbcTypeCode(SqlTypes.CHAR) // Diz ao Hibernate 6 para tratar como caractere
+    private UUID id;
     
     @Column(nullable = false, unique = true)
     private String name;
