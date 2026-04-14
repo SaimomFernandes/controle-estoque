@@ -1,38 +1,58 @@
-# 📦 Inventory API - Sistema de Gerenciamento de Estoque
 
-Esta é uma API REST desenvolvida com **Java e Spring Boot** focada no controle de produtos e inventário. O projeto foi estruturado seguindo as melhores práticas de arquitetura em camadas, visando um código limpo e de fácil manutenção.
+# 🚚 Projeto Controle de Estoque (Fullstack Java)
+Este é um projeto paralelo desenvolvido para demonstrar competências como Desenvolvedor Fullstack Júnior. O sistema gerencia um estoque completo, utilizando relacionamentos entre produtos e categorias, com persistência em banco de dados real.
 
-## 🚀 Status do Projeto
-O núcleo da API já está funcional, contando com a camada de persistência e os principais endpoints de CRUD (Create, Read, Update, Delete).
+## 🚀 O que este projeto demonstra:
+Domínio de Java & Spring Boot: Uso de rotas REST, Injeção de Dependências e JPA.
+Banco de Dados Real: Migração do banco em memória (H2) para MySQL 8.
+Infraestrutura como Código: Uso de Docker para padronizar o ambiente.
+Segurança e Modernidade: Implementação de identificadores únicos via UUID.
+Documentação Profissional: API documentada e testável via Swagger/OpenAPI.
 
 ## 🛠️ Tecnologias e Ferramentas
-- **Linguagem:** Java 17+
-- **Framework:** Spring Boot 3.x
-- **Persistência de Dados:** Spring Data JPA / Hibernate
-- **Banco de Dados:** H2 Database (Banco em memória para testes ágeis)
-- **Gerenciador de Dependências:** Maven
-- **Produtividade:** Lombok (Annotations para redução de boilerplate)
+Backend: Java 17 / Spring Boot 3.x
+Banco de Dados: MySQL 8
+Persistência: Spring Data JPA / Hibernate
+Containerização: Docker & Docker Compose
+Documentação: Swagger UI (OpenAPI 3)
+Produtividade: Lombok
 
-## 📂 Arquitetura do Sistema
-O projeto utiliza a separação por responsabilidades:
-- **Model/Entity:** Mapeamento objeto-relacional da entidade Produto.
-- **Repository:** Interface de comunicação direta com o banco de dados (Spring Data JPA).
-- **Controller:** Endpoints da API para manipulação dos dados de estoque.
+## 📖 Documentação da API (Swagger)
+A API conta com documentação interativa. Com a aplicação rodando, acesse:
+👉 http://localhost:8080/swagger-ui/index.html
+Lá você poderá testar todos os endpoints de Produtos e Categorias diretamente pelo navegador.
 
-## 📋 Endpoints Principais 
-- `GET /produtos` - Lista todos os produtos cadastrados.
-- `GET /produtos/{id}` - Busca um produto específico pelo ID.
-- `POST /produtos` - Cadastra um novo item no estoque.
-- `PUT /produtos/{id}` - Atualiza informações de um produto existente.
-- `DELETE /produtos/{id}` - Remove um produto do sistema.
+## 📋 Endpoints Principais
+Recurso	Método	Rota	Descrição
+Categoria	POST	/categorias	Cria uma nova categoria (Ex: Eletrônicos)
+Categoria	GET	/categorias	Lista todas as categorias
+Produto	POST	/produtos/create	Cadastra um produto vinculado a uma categoria
+Produto	GET	/produtos/	Lista todos os produtos no estoque
+Produto	GET	/produtos/{id}	Busca um produto específico pelo seu UUID
+Produto	DELETE	/produtos/{id}	Remove um item do sistema
 
 ## ⚙️ Como executar a aplicação
-1. Clone o repositório:
-   `git clone https://github.com/SaimomFernandes/controle-estoque.git`
-2. Certifique-se de ter o Maven instalado ou use o wrapper `./mvnw`.
-3. Execute o comando:
-   `mvn spring-boot:run`
-4. Acesse a API via Postman ou Insomnia em: `http://localhost:8080/produtos`
-5. Console do Banco H2: `http://localhost:8080/h2-console`
+Você não precisa ter o MySQL instalado localmente, apenas o Docker Desktop.
+Clone o repositório:
+
+bash
+git clone https://github.com
+Use o código com cuidado.
+Suba o banco de dados via Docker:
+No terminal, dentro da pasta do projeto:
+
+bash
+docker-compose up -d
+Use o código com cuidado.
+Execute o projeto Java:
+Pela sua IDE ou via Maven:
+
+bash
+mvn spring-boot:run
+Use o código com cuidado.
+
+## Desenvolvido por Mauricio Fernandes
+## Focado na transição de carreira para Tecnologia, construindo soluções sólidas entre uma viagem e outra como motorista de caminhão. 🛣️👨‍💻
+
 
 ---Mauricio fernandes--- Desenvolvedor Full Stack Júnior.
