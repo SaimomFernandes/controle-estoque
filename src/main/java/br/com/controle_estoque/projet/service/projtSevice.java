@@ -33,7 +33,7 @@ public class projtSevice {
         }
 
         // REGRA 4: Evitar duplicidade (MySQL vai agradecer essa organização)
-        if (repository.existsById(product.getUUID())) {
+        if (repository.existsById(product.getId())) {
             throw new RuntimeException("Já existe um produto cadastrado com este nome!");
         }
 
